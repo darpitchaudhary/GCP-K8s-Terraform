@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: test
+  namespace: istio-system
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - public-gateway
+  http:
+  - name: "reviews-v2-routes"
+    match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: webappreleasespringboot-postgres-k8s.default.svc.cluster.local
+        port:
+          number: 80
+  

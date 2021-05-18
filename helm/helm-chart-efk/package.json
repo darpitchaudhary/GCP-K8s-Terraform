@@ -1,0 +1,59 @@
+{
+  "name": "helm-chart-efk",
+  "version": "1.0.0",
+  "description": "Helm chart Repo for EFK stack",
+  "main": "index.js",
+  "dependencies": {
+    "@brpaz/semantic-release-helm": "^1.1.0",
+    "@semantic-release/exec": "^5.0.0",
+    "semantic-release": "^17.3.9",
+    "semantic-release-helm": "^1.4.3"
+  },
+  "devDependencies": {
+    "semantic-release": "^17.3.9"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "*.tgz"
+          ]
+        }
+      ],
+      [
+        "semantic-release-helm",
+        {
+          "path": "./efk-chart"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "verifyConditionsCmd": "rm -f -- *.tgz",
+          "prepareCmd": "helm package efk-chart --version ${nextRelease.version}"
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSYE7125AdvanceCloud-ShubhamDarpit/helm-chart-efk.git"
+  },
+  "author": "Shubham Darpit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CSYE7125AdvanceCloud-ShubhamDarpit/helm-chart-efk/issues"
+  },
+  "homepage": "https://github.com/CSYE7125AdvanceCloud-ShubhamDarpit/helm-chart-efk#readme"
+}

@@ -1,0 +1,5 @@
+istio:
+  namespace: istio-system
+  dns: webapp1.prod.shubhamkawane.com
+  email: kawane.s@northeastern.edu
+  

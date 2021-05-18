@@ -1,0 +1,19 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+To delete the release, try:
+
+  $ helm delete {{ .Release.Name }}
+
+To access the kibana to see the applications and kubernetes cluster logs, follow below steps:
+
+  kubectl get pods 
+  kubectl port-forward {kibana pod name} 5601:5601 --namespace=kube-logging
+  and access the application using localhost:5601
+  

@@ -1,0 +1,11 @@
+## number of exporter instances
+##
+replicaCount: 1
+es:
+  ## Address (host and port) of the Elasticsearch node we should connect to.
+  ## This could be a local node (localhost:9200, for instance), or the address
+  ## of a remote Elasticsearch server. When basic auth is needed,
+  ## specify as: <proto>://<user>:<password>@<host>:<port>. e.g., http://admin:pass@localhost:9200.
+  ##
+  uri: http://elasticsearch-master.default.svc.cluster.local:9200
+

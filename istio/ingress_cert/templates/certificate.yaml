@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: istio-gateway
+  namespace: istio-system
+spec:
+  secretName: istio-ingressgateway
+  dnsNames:
+  - {{ .Values.domain }}
+  issuerRef:
+    name: letsencrypt-prod

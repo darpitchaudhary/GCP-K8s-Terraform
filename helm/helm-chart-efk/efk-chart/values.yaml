@@ -1,0 +1,13 @@
+elasticsearch:
+  namespace: kube-logging
+  label: elasticsearch
+  replicas: 1
+
+fluentd:
+  namespace: kube-logging
+  label: fluentd
+
+kibana:
+  namespace: kube-logging
+  label: kibana
+  replicas: 1

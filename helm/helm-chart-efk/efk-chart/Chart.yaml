@@ -1,0 +1,15 @@
+apiVersion: v2
+name: efk-chart
+description: A Helm chart for EFK-stack
+type: application
+version: 0.1.0
+sources:
+  - https://github.com/CSYE7125AdvanceCloud-ShubhamDarpit/helm-chart-efk.git
+maintainers:
+  - name: Shubham Mahesh Kawane
+    email: kawane.s@northeastern.edu
+  - name: Darpit Chaudhary
+    email: chaudhary.da@northeastern.edu
+appVersion: "1.16.0"
+
+
